@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog</title>
+
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika&family=Poppins:wght@200;300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+    <div class="app">
+        
+        <div class="header">
+            
+        <div class="header-container">
+            <div class="header-box">
+                <div class="menu-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <h2>Admin</h2>
+            </div>
+           
+        
+            {{#if image}}
+            <div class="user-option">
+                <img src="{{image}}" alt="" class="user-avatar">
+                <div class="">
+                
+                </div>
+                {{#if username}}
+                <div class="option-box">
+                <ul class="list-option">
+                    {{#ifRole role "admin"}}
+                    <a href="/manager" class="item-option">Quản lý</a>
+                        
+                    {{/ifRole}}
+                    <a href="/manager/profile" class="item-option">Thông tin cá nhân</a>
+                    <a href="/sharing/manager" class="item-option">Quản lý bài viết</a>
+                    <a href="/changePass" class="item-option">Thay đổi mật khẩu</a>
+                    <a href="/logout" class="item-option">Đăng xuất</a>
+                </ul>
+                </div>
+
+                {{else}}
+                <div class="option-box">
+                <ul class="list-option">
+                    <a href="/login" class="item-option">Đăng nhập</a>
+                </ul>
+                </div>
+                {{/if}}
+            </div>
+            {{else}}
+            <div></div>
+            {{/if}}
+        </div>
+        </div>
+
+        <div class="body">
+            {{{body}}}
+        </div>
+    </div>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
