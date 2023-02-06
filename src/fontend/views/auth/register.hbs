@@ -78,7 +78,7 @@
                 Validator.isEmail('#email', 'Email không hợp lệ'),
                 Validator.minLength("#password", 6, 'Password phải lớn hơn 5 ký tự'),
                 Validator.isConfirmed('#repassword', function(){
-                    return document.querySelector('#loginform #password').value;
+                    return document.querySelector('#password').value;
                 }, 'Mật khẩu nhập lại không chính xác'),
                 Validator.isRequired('#repassword', 'Không được để trống phần này')
             ],
